@@ -234,70 +234,70 @@
 작은 것 같지만 이와 같은 것들이 쌓여서 아주 기민하고 민첩한 조직을 만들어 냅니다.
 ```
 # 4. 애자일 보드
-### Frontend - Frontend 페이지를 Vue 로 구성 (화면 설계서)
+### ✅ Frontend - Frontend 페이지를 Vue 로 구성 (화면 설계서)
 ![image](https://github.com/user-attachments/assets/b547b885-25f8-413f-ab40-3251e8b77e95)
 ![image](https://github.com/user-attachments/assets/b947d9db-b2d1-4494-8842-82285289d6ff)
 <br><br><br>
 
-### Backend - Backend 데이터 관리로 Django 구성(요구 사항 정의서)
+### ✅ Backend - Backend 데이터 관리로 Django 구성(요구 사항 정의서)
 ![image](https://github.com/user-attachments/assets/89ece460-81bd-44cf-bc7d-644487b3b267)
 <br><br><br>
 
-### FastAPI - AI 서빙용으로 FastAPI 구성
+### ✅ FastAPI - AI 서빙용으로 FastAPI 구성
 ![image](https://github.com/user-attachments/assets/ccd6592b-4e7c-4fab-a7fe-6f16e8515195)
 <br><br><br>
 
-### AI Client - 비용 최적화를 위해 DLLS 구성 (모델 파인튜닝 및 추론 설계서)
+### ✅ AI Client - 비용 최적화를 위해 DLLS 구성 (모델 파인튜닝 및 추론 설계서)
 ![image](https://github.com/user-attachments/assets/ee098b0b-77b0-4e53-9a47-836e61081638)
 <br><br><br>
 
 
 
 # 5. 비용 최적화를 위한 Deep Learning Local Server 구성 + 보안 설정을 위한 TLS / SSL 소켓 구성
-## 10-1 Socket Server (FastAPI) 구성 및 구동 방법
-1. FastAPI 프로젝트 폴더 내에서 미리 구성해 놓은 소켓 통신 관련 submodule을 다음의 명령어를 통해 연결합니다.
+### 5-1 Socket Server (FastAPI) 구성 및 구동 방법
+(1) FastAPI 프로젝트 폴더 내에서 미리 구성해 놓은 소켓 통신 관련 submodule을 다음의 명령어를 통해 연결합니다.
 ```bash
 git submodule add "socket server submodule Github 주소" template
 ```
 
-2. 다음과 같이 `template` 라는 submodule이 프로젝트 내부에 붙은 것을 확인할 수 있습니다.
+(2) 다음과 같이 `template` 라는 submodule이 프로젝트 내부에 붙은 것을 확인할 수 있습니다.
 ![image](https://github.com/user-attachments/assets/fc83fd3b-3cf0-4852-a6e1-c143afb3eed3)
-3. 이후에 `cd include/socket_server/`에 소켓 서버의 역할을 하도록 해놓은 모듈에 대한 내용들을 다음의 명령어로 갱신시킵니다.
+(3) 이후에 `cd include/socket_server/`에 소켓 서버의 역할을 하도록 해놓은 모듈에 대한 내용들을 다음의 명령어로 갱신시킵니다.
 ![image](https://github.com/user-attachments/assets/1bf1190e-1aad-45d9-ad6b-d44090f88c0f)
 ```bash
 cd ../..
 git submodule update --init --recursive
 ```
-4. 그러면 아래처럼 내용들이 추가된 것을 확인할 수 있습니다.
+(4) 그러면 아래처럼 내용들이 추가된 것을 확인할 수 있습니다.
 ![image](https://github.com/user-attachments/assets/bb624477-e11a-461c-a532-63389108c566)
 
-5. 이후 미리 준비해놓은 보안 관련 파일들을 프로젝트 폴더에 배치시킵니다.
+(5) 이후 미리 준비해놓은 보안 관련 파일들을 프로젝트 폴더에 배치시킵니다.
 ```bash
 CA.pem
 svr.key
 svr.crt
 ```
 
-6. 서버를 구동시키면 다음과 같이 ai-client의 접속을 대기하는 것을 확인할 수 있습니다.
+(6) 서버를 구동시키면 다음과 같이 ai-client의 접속을 대기하는 것을 확인할 수 있습니다.
 ![image](https://github.com/user-attachments/assets/dbdf40fe-1fc0-4e15-9c05-73618d202e63)
 
-## 10-2 Socket Client (ai-client) 구성 및 구동 방법
-1. ai-client 프로젝트 폴더 내에서 소켓 서버와 마찬가지로 미리 구성해 놓은 소켓 통신 관련 submodule을 다음의 명령어를 통해 연결합니다.
+### 5-2 Socket Client (ai-client) 구성 및 구동 방법
+(1) ai-client 프로젝트 폴더 내에서 소켓 서버와 마찬가지로 미리 구성해 놓은 소켓 통신 관련 submodule을 다음의 명령어를 통해 연결합니다.
 ```bash
 git submodule add "socket client submodule Github 주소" template
 ```
 
-2. 다음과 같이 `template` 라는 submodule이 프로젝트 내부에 붙은 것을 확인할 수 있습니다.
+(2) 다음과 같이 `template` 라는 submodule이 프로젝트 내부에 붙은 것을 확인할 수 있습니다.
 ![image](https://github.com/user-attachments/assets/7340470c-97c3-4ee4-ab18-d52bbc6a8c83)
 
-3. 이후 미리 준비해놓은 보안 관련 파일들을 프로젝트 폴더에 배치시킵니다.
+(3) 이후 미리 준비해놓은 보안 관련 파일들을 프로젝트 폴더에 배치시킵니다.
 ```bash
 CA.pem
 client.key
 client.crt
 ```
 
-4. 서버를 구동시킨 상태에서 ai-client를 구동하여 socket server로 접속을 시도하면 다음과 같이 잘 접속되는 것을 확인할 수 있습니다. 또한, 미리 구성한 보안 접속도 잘 작동하는 것을 확인할 수 있습니다.
+(4) 서버를 구동시킨 상태에서 ai-client를 구동하여 socket server로 접속을 시도하면 다음과 같이 잘 접속되는 것을 확인할 수 있습니다. 또한, 미리 구성한 보안 접속도 잘 작동하는 것을 확인할 수 있습니다.
 ![image](https://github.com/user-attachments/assets/98fdf151-ee23-41ba-a09d-fc1ac6ffd2d0)
 
 
@@ -316,10 +316,10 @@ client.crt
 
 
 # 10. Result (수행 결과)
-Frontend / Backend / FastAPI / DLLS 구성에서 모든 동작이 안정적으로 잘 실행되는지 확인
-FastAPI - DLLS 구성에서 사용자 요청에 따른 LLM 동작이 잘 동작하는지 확인
-구성한 사용자 정의형 프로토콜이 잘 동작하는지 확인
-시연 결과 모습
+### ✅ Frontend / Backend / FastAPI / DLLS 구성에서 모든 동작이 안정적으로 잘 실행되는지 확인
+### ✅ FastAPI - DLLS 구성에서 사용자 요청에 따른 LLM 동작이 잘 동작하는지 확인
+### ✅ 구성한 사용자 정의형 프로토콜이 잘 동작하는지 확인
+### ✅ 시연 결과 모습
 
 ![image](https://github.com/user-attachments/assets/09b2e0f6-66a1-4288-a012-81d424b158e9) 
 ![image](https://github.com/user-attachments/assets/4f6940df-a192-43a9-a4d0-8e425dc25290)
@@ -327,7 +327,11 @@ FastAPI - DLLS 구성에서 사용자 요청에 따른 LLM 동작이 잘 동작�
 ![image](https://github.com/user-attachments/assets/acebf5fb-cbfc-4053-96f8-57879e1ee081)
 ![image](https://github.com/user-attachments/assets/c4017585-5472-48d0-905b-ec3b713c7ce3) 
 ![image](https://github.com/user-attachments/assets/ffe79024-74c2-42b2-bab7-d759514eb208)  
+![image](https://github.com/user-attachments/assets/fdb4576b-e308-4d77-a82b-237857b53184)
+![image](https://github.com/user-attachments/assets/e86076e9-ed73-49d9-96f0-4ad491f83783)
+![image](https://github.com/user-attachments/assets/cc0f7bb1-fe7f-4457-94ca-1195a3fba255)
 
+<br><br><br>
 
 
 
@@ -337,7 +341,7 @@ FastAPI - DLLS 구성에서 사용자 요청에 따른 LLM 동작이 잘 동작�
 _AWS와 Docker에 대해서 배우고 싶었는데, 단순히 배우는 것에서 그치지 않고 웹 애플리케이션 작성부터 배포까지 경험할 수 있어서 정말 좋은 경험이었습니다! 팀원분들도 같이 열심히 해주셔서 어렵지 않게 마무리 할 수 있었습니다. 다들 고생하셨습니다!!👏_  
 
 👨‍💻<b>민경원</b>  
-_AWS -GitHub Actions-Docker등을 이용한 CI-CD 구축을 직접 경험해볼 수 있어서 좋았습니다._  
+_Open AI API 등을 이용한 LLM 서비스 구축과 DLLS 구성을 통한 비동기 소켓 통신까지 직접 경험해 볼 수 있어서 좋았습니다._  
 
 😺<b>정아람</b>  
 _CI/CD 환경 구성으로 프로젝트 배포를 자동화하고 AWS와 결합해 서비스를 할 수 있는 좋은 경험이었습니다._  
