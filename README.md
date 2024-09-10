@@ -185,7 +185,7 @@
 
 
 # 5. 비용 최적화를 위한 Deep Learning Local Server 구성 + 보안 설정을 위한 TLS / SSL 소켓 구성
-## 10-1 Socket Server (FastAPI) 구성 및 구동 방법
+## 5-1 Socket Server (FastAPI) 구성 및 구동 방법
 1. FastAPI 프로젝트 폴더 내에서 미리 구성해 놓은 소켓 통신 관련 submodule을 다음의 명령어를 통해 연결합니다.
 ```bash
 git submodule add "socket server submodule Github 주소" template
@@ -212,7 +212,7 @@ svr.crt
 6. 서버를 구동시키면 다음과 같이 ai-client의 접속을 대기하는 것을 확인할 수 있습니다.
 ![image](https://github.com/user-attachments/assets/dbdf40fe-1fc0-4e15-9c05-73618d202e63)
 
-## 10-2 Socket Client (ai-client) 구성 및 구동 방법
+## 5-2 Socket Client (ai-client) 구성 및 구동 방법
 1. ai-client 프로젝트 폴더 내에서 소켓 서버와 마찬가지로 미리 구성해 놓은 소켓 통신 관련 submodule을 다음의 명령어를 통해 연결합니다.
 ```bash
 git submodule add "socket client submodule Github 주소" template
@@ -249,8 +249,14 @@ client.crt
 # 10. Result (수행 결과)
 Frontend / Backend / FastAPI / DLLS 구성에서 모든 동작이 안정적으로 잘 실행되는지 확인
 FastAPI - DLLS 구성에서 사용자 요청에 따른 LLM 동작이 잘 동작하는지 확인
-구성한 사용자 정의형 프로토콜이 잘 동작하는지 확인
-시연 결과 모습
+![image](https://github.com/user-attachments/assets/bf780741-8d81-4d19-aa4f-2db6d27fbb8b)
+
+### 구성한 사용자 정의형 프로토콜이 잘 동작하는지 확인
+postman으로 사용자 정의형 프로토콜이 잘 동작하는지 확인
+![image](https://github.com/user-attachments/assets/24b4ccee-2cd8-4681-a38a-81fbe1c7a394)
+![image](https://github.com/user-attachments/assets/b213e1f9-59b3-45bd-be18-4a19b7e573b0)
+
+### 시연 결과 모습
 
 ![image](https://github.com/user-attachments/assets/09b2e0f6-66a1-4288-a012-81d424b158e9) 
 ![image](https://github.com/user-attachments/assets/4f6940df-a192-43a9-a4d0-8e425dc25290)
