@@ -98,52 +98,121 @@
 
 # 2. Tech Stack (기술 스택)
 
-### Co-Work Tool(Communication)
-![Github](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white)
-<img src="https://img.shields.io/badge/gitkraken-179287?style=for-the-badge&logo=gitkraken&logoColor=white"/>
-<img src="https://img.shields.io/badge/notion-%23000000?style=for-the-badge&logo=notion&logoColor=white"/> 
-<img src="https://img.shields.io/badge/slack-%234A154B?style=for-the-badge&logo=slack&logoColor=white"/>
-<img src="https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=discord&logoColor=white"/>
+>### <span style="color:cyan"> Co-Work Tool </span>
+<table>
+  <tr>
+    <td>Communication & Messenger</td>
+    <td><img src="https://img.shields.io/badge/Discord-5865F2?style=flat&logo=Discord&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/Notion-000000?style=flat&logo=Notion&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/Slack-4A154B?style=flat&logo=Slack&logoColor=white"/></td>
+  </tr>
+  <tr>
+    <td>Development & Merge</td>
+    <td><img src="https://img.shields.io/badge/Git-F05032?style=flat&logo=Git&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/gitkraken-179287?style=flat&logo=Git&logoColor=gitkraken&logoColor=white"/></td>
+  </tr>  
+</table>
 
-### IDE
-![PyCharm](https://img.shields.io/badge/pycharm-%23000000?style=for-the-badge&logo=pycharm&logoColor=white")
-<img src="https://img.shields.io/badge/Jupyter_Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white"/>
-<img src="https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white"/> 
+>### <span style="color:cyan"> Frontend </span>
+<table>
+  <tr>
+    <td>FE IDE</td>
+    <td><img src="https://img.shields.io/badge/VS%20Code-007ACC?style=flat&logo=visual-studio-code&logoColor=white"/></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Markup & Style & JS</td>
+    <td><img src="https://img.shields.io/badge/HTML-E34F26?style=flat&logo=html5&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/css-1572B6?style=flat&logo=css3&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/Javascript-ffb13b?style=flat&logo=javascript&logoColor=white"/></td>
+  </tr> 
+  <tr>
+    <td>Vue & TypeScript</td>
+    <td><img src="https://img.shields.io/badge/vue.js-4FC08D?style=flat&logo=vue.js&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/vuetify-%231867C0?style=flat&logo=vuetify&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/typescript-3178C6?style=flat&logo=typescript&logoColor=black"/></td>
+  </tr> 
+  <tr>
+    <td>Async HTTP/AJAX Request</td>
+    <td><img src="https://img.shields.io/badge/axios-%235A29E4?style=flat&logo=axios&logoColor=white"/></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 
 
-### Frontend
-![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-<img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
-<img src="https://img.shields.io/badge/Javascript-ffb13b?style=for-the-badge&logo=javascript&logoColor=white"/>
-<img src="https://img.shields.io/badge/vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white"/> 
-<img src="https://img.shields.io/badge/vuetify-%231867C0?style=for-the-badge&logo=vuetify&logoColor=white"/>
-<img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=black"/>
-<img src="https://img.shields.io/badge/axios-%235A29E4?style=for-the-badge&logo=axios&logoColor=white"/>
+>### <span style="color:cyan"> Backend </span>
+<table>
+  <tr>
+    <td>BE IDE & Language</td>
+    <td><img src="https://img.shields.io/badge/pycharm-%23000000?style=flat&logo=pycharm&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/python-3776AB?style=flat&logo=python&logoColor=white"/></td>
+  </tr>  
+  <tr>
+    <td>RDBMS</td>
+    <td><img src="https://img.shields.io/badge/mysql-4479A1?style=flat&logo=mysql&logoColor=white"/></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Docker</td>
+    <td><img src="https://img.shields.io/badge/docker-%232496ED?style=flat&logo=docker&logoColor=white"/></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>In Memory Caching DB</td>
+    <td><img src="https://img.shields.io/badge/redis-%23FF4438?style=flat&logo=redis&logoColor=white"/></td>
+    <td></td>
+  </tr>
+</table>
 
-### Backend
-![Python](https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-<img src="https://img.shields.io/badge/pandas-%23150458?style=for-the-badge&logo=pandas&logoColor=white"/> 
-<img src="https://img.shields.io/badge/numpy-%23013243?style=for-the-badge&logo=numpy&logoColor=white"/>
-<img src="https://img.shields.io/badge/Openpyxl-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white"/>
-<img src="https://img.shields.io/badge/SQLAlchemy-666699?style=for-the-badge&logo=sqlalchemy&logoColor=white"/>
+>### <span style="color:cyan"> LLM with DLLS </span>
+<table>  
+  <tr>
+    <td>Deep Learning</td>
+    <td><img src="https://img.shields.io/badge/Deep_Learning-00599C?style=flat&logo=deep-learning&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/Keras-D00000?style=flat&logo=keras&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white"/></td>
+  </tr>  
+  <tr>
+    <td>LLM</td>
+    <td><img src="https://img.shields.io/badge/LLM-4B8BBE?style=flat&logo=python&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/Llama-FF4500?style=flat&logo=llama&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/Hugging%20Face-FFDE47?style=flat&logo=huggingface&logoColor=white"/></td>
+  </tr>
+  <tr>
+    <td>DLLS</td>
+    <td><img src="https://img.shields.io/badge/fastapi-%23009688?style=flat&logo=fastapi&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/Async%20Socket%20Server-FF6F00?style=flat&logo=socket.io&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/Async%20Socket%20Client-007ACC?style=flat&logo=socket.io&logoColor=white"/></td>
+    <td></td>
+  </tr>  
+</table>
 
-### Fast API (AI Core)
-![FastAPI](https://img.shields.io/badge/fastapi-%23009688?style=for-the-badge&logo=fastapi&logoColor=white)
-<img src="https://img.shields.io/badge/Machine_Learning-FF6F00?style=for-the-badge&logo=machine-learning&logoColor=white"/>
-<img src="https://img.shields.io/badge/scikitlearn-%23F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white"/>
-<img src="https://img.shields.io/badge/Deep_Learning-00599C?style=for-the-badge&logo=deep-learning&logoColor=white"/>
-<img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white"/>
-<img src="https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white"/>
-
-### CI-CD Infrastructure
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white)
-<img src="https://img.shields.io/badge/AWS_EC2-FF9900?style=for-the-badge&logo=amazon-ec2&logoColor=white"/>
-<img src="https://img.shields.io/badge/AWS_S3-569A31?style=for-the-badge&logo=amazon-s3&logoColor=white"/>
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"/>
-<img src="https://img.shields.io/badge/github%20actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white"/>
-<img src="https://img.shields.io/badge/docker-%232496ED?style=for-the-badge&logo=docker&logoColor=white"/> 
-<img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>
-<img src="https://img.shields.io/badge/redis-%23FF4438?style=for-the-badge&logo=redis&logoColor=white"/>
+>### <span style="color:cyan"> CI-CD Infrastructure </span>
+<table>
+  <tr>
+    <td>OS & Remote</td>
+    <td><img src="https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black"/></td>
+    <td><img src="https://img.shields.io/badge/WSL-4E9A06?style=flat&logo=linux&logoColor=white"/></td>
+    <td></td>
+  </tr>  
+  <tr>
+    <td>AWS</td>
+    <td><img src="https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonwebservices&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/AWS_EC2-FF9900?style=flat&logo=amazon-ec2&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/AWS_S3-569A31?style=flat&logo=amazon-s3&logoColor=white"/></td>
+  </tr>  
+  <tr>
+    <td>GitHub & GitHub Action</td>
+    <td><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/github%20actions-2088FF?style=flat&logo=github-actions&logoColor=white"/></td>
+    <td></td>
+  </tr>  
+</table>
 <br><br><br>
 
 
@@ -185,7 +254,7 @@
 
 
 # 5. 비용 최적화를 위한 Deep Learning Local Server 구성 + 보안 설정을 위한 TLS / SSL 소켓 구성
-## 5-1 Socket Server (FastAPI) 구성 및 구동 방법
+## 10-1 Socket Server (FastAPI) 구성 및 구동 방법
 1. FastAPI 프로젝트 폴더 내에서 미리 구성해 놓은 소켓 통신 관련 submodule을 다음의 명령어를 통해 연결합니다.
 ```bash
 git submodule add "socket server submodule Github 주소" template
@@ -212,7 +281,7 @@ svr.crt
 6. 서버를 구동시키면 다음과 같이 ai-client의 접속을 대기하는 것을 확인할 수 있습니다.
 ![image](https://github.com/user-attachments/assets/dbdf40fe-1fc0-4e15-9c05-73618d202e63)
 
-## 5-2 Socket Client (ai-client) 구성 및 구동 방법
+## 10-2 Socket Client (ai-client) 구성 및 구동 방법
 1. ai-client 프로젝트 폴더 내에서 소켓 서버와 마찬가지로 미리 구성해 놓은 소켓 통신 관련 submodule을 다음의 명령어를 통해 연결합니다.
 ```bash
 git submodule add "socket client submodule Github 주소" template
@@ -249,14 +318,8 @@ client.crt
 # 10. Result (수행 결과)
 Frontend / Backend / FastAPI / DLLS 구성에서 모든 동작이 안정적으로 잘 실행되는지 확인
 FastAPI - DLLS 구성에서 사용자 요청에 따른 LLM 동작이 잘 동작하는지 확인
-![image](https://github.com/user-attachments/assets/bf780741-8d81-4d19-aa4f-2db6d27fbb8b)
-
-### 구성한 사용자 정의형 프로토콜이 잘 동작하는지 확인
-postman으로 사용자 정의형 프로토콜이 잘 동작하는지 확인
-![image](https://github.com/user-attachments/assets/24b4ccee-2cd8-4681-a38a-81fbe1c7a394)
-![image](https://github.com/user-attachments/assets/b213e1f9-59b3-45bd-be18-4a19b7e573b0)
-
-### 시연 결과 모습
+구성한 사용자 정의형 프로토콜이 잘 동작하는지 확인
+시연 결과 모습
 
 ![image](https://github.com/user-attachments/assets/09b2e0f6-66a1-4288-a012-81d424b158e9) 
 ![image](https://github.com/user-attachments/assets/4f6940df-a192-43a9-a4d0-8e425dc25290)
@@ -267,138 +330,9 @@ postman으로 사용자 정의형 프로토콜이 잘 동작하는지 확인
 
 
 
-# 12. 테스트 보고서 (CI 테스트 결과)
-1. **테스트 환경**  
-  * Jest
 
-2. **유닛 테스트**  
-  * Mocking test
-  * 게시판에 게시글이 예상대로 등록되는지 확인
-
-3. **커버리지 테스트**  
-   * 커버리지 테스트를 통하여 코드 품질을 모니터링하고 개선할 수 있음  
-   * 테스트 결과, 코드베이스에서 약 87퍼센트 실행됨을 알 수 있음  
-  ![Coverage1](https://github.com/user-attachments/assets/e3d13016-8efc-4681-8264-f4cc047f0c3a)  
-4. **테스트 스크린샷**  
-  * 🧪 **Backend Build Test**  
-    <img width="976" alt="Backend-Build-Test" src="https://github.com/user-attachments/assets/b7ad4ba0-f070-477a-b1f6-39460f94837c">  
-  * 🧪 **Frontend Build Test**  
-    <img width="993" alt="Frontend-Build-Test" src="https://github.com/user-attachments/assets/449cff0e-1953-4a93-aa0f-3ea8e07291d9">   
   
-5. **결 론**
-  * 🆗 _Backend_ 와 _Frontend_ 모두 성공적으로 **Build** 되는 것을 확인할 수 있습니다.
-
-# 13. Deploy Issue (배포 이슈)
-1. **Error: repository name must be lowercase**
-![Issue1](https://github.com/user-attachments/assets/0eaa074a-c88e-469b-8ab2-e90919ad1c88)  
-<br>
-
-### _Solution_   
-만약 actor가 Uppercase라면, 아래와 같이 직접 Lowercase를 명시하여 문제를 해결할 수 있습니다.
-
-```yaml
-name: Django CD (Continuous Deploy)
-
-on:
-  repository_dispatch:
-    types: [BACKEND_TEST_FINISH_TRIGGER]
-
-jobs:
-  build:
-    name: build-app
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-```
-  
-위의 내용을 아래와 같이 수정합니다.  
-```yaml
-name: Django CD (Continuous Deploy)
-
-on:
-  repository_dispatch:
-    types: [BACKEND_TEST_FINISH_TRIGGER]
-    
-env:
-  DOCKER_IMAGE: ghcr.io/${{ secrets.REAL_ACTOR }}/tcp-backend
-
-jobs:
-  build:
-    name: build-app
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-```
-
-그리고 아래 내용을 수정합니다.  
-```yaml
-- name: Build and Push Docker Image
-  run: |
-    cd tcp_backend/tcp_django
-    docker buildx build --platform linux/arm64 -f Dockerfile -t ghcr.io/${{ github.actor }}/tcp-django-backend-server:latest --push .
-```
-  
-위의 내용을 아래와 같이 수정합니다.
-```yaml
-- name: Build and Push Docker Image
-  run: |
-    cd tcp_backend/tcp_django
-    docker buildx build --platform linux/arm64 -f Dockerfile -t ${{ env.DOCKER_IMAGE }}:latest --push .
-```
-
-**secrets**에 _REAL_ACTOR_ 를 설정하고 _REAL_ACTOR_ 를 **소문자 본인 계정**으로 작성하면 됩니다.  
-ex) Ah-ram >> ah-ram  
-
-마지막으로 아래 내용을 수정합니다.  
-```yaml
-deploy:
-  needs: build
-  name: Deploy
-  runs-on: [ self-hosted, deploy-tcp-backend ]
-  steps:
-  - name: Login to GHCR
-    uses: docker/login-action@v1
-    with:
-      registry: ghcr.io
-      username: ${{ github.actor }}
-      password: ${{ secrets.GHCR_TOKEN }}
-```
-
-위의 내용을 아래와 같이 수정합니다.  
-```yaml
-deploy:
-  needs: build
-  name: Deploy
-  runs-on: [ self-hosted, deploy-lms-backend ]
-  steps:
-  - name: Login to GHCR
-    uses: docker/login-action@v1
-    with:
-      registry: ghcr.io
-      username: ${{ secrets.REAL_ACTOR }}
-      password: ${{ secrets.GHCR_TOKEN }}
-```
-
-2. **Cannot connect to the Docker daemon at <workdir>**
-![Issue2](https://github.com/user-attachments/assets/775cadb2-3228-425a-bf98-9ebf4aed8d43)  
-<br>
-
-### _Solution_  
-local에 **docker desktop이 켜져있는지 확인**해보아야 합니다.  
-Docker desktop을 실행하고 다시 시도하니 해결되었습니다.  
-
-3. **FastAPI 배포 이후, 웹에 접속이 되지 않습니다.**
-<img width="722" alt="Issue3" src="https://github.com/user-attachments/assets/89331de6-8e8b-42d8-bf7b-e15364e2260d">
-<br>
-
-### _Solution_  
-FastAPI 배포 후, **인스턴스 보안 그룹에서 33333 port에 대하여 인바운드 설정**을 해주어야 합니다.  
-설정하고 다시 접속하면 정상적으로 처리되는 것을 확인할 수 있습니다.  
-![Issue3-1](https://github.com/user-attachments/assets/0a4d7844-692f-43e2-98fb-76680f98e5a1)  
-  
-# 14. 한 줄 회고
+# 11. 한 줄 회고
 🤓<b>한재혁</b>  
 _AWS와 Docker에 대해서 배우고 싶었는데, 단순히 배우는 것에서 그치지 않고 웹 애플리케이션 작성부터 배포까지 경험할 수 있어서 정말 좋은 경험이었습니다! 팀원분들도 같이 열심히 해주셔서 어렵지 않게 마무리 할 수 있었습니다. 다들 고생하셨습니다!!👏_  
 
