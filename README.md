@@ -301,21 +301,112 @@ client.crt
 ![image](https://github.com/user-attachments/assets/98fdf151-ee23-41ba-a09d-fc1ac6ffd2d0)
 
 
+# 6. 데이터 전처리
 
+## 벡터 저장소
+검색 속도 향상을 위해, FAISS를 사용하여 벡터 저장소를 생성 및 저장합니다. 
+<br>FAISS를 사용하기 위해 텍스트를 청크 단위로 나눈 후 Documnet 형태로 변환합니다.
 
+```python
+def splitTextIntoDocuments(self, text, chunkSize=256, chunkOverlap=16):
+    textSplitter = RecursiveCharacterTextSplitter(chunk_size=chunkSize, chunk_overlap=chunkOverlap)
+    chunkList = textSplitter.split_text(text)
 
-# 6. 각자 팀 주제에 따라 TF-IDF 기반의 벡터 산출
-# 7. 주제에 맞게 벡터 결과를 비교
-# 8. 검색 속도 향상을 위해 벡터 값을 벡터 DB 에 저장
-# 9. 사용자 요청에 대한 검색 속도 향상을 통한 응답성 증대
+    documentList = [Document(page_content=chunk) for chunk in chunkList]
+    return documentList
+```
+이후, 임베딩을 통해 벡터화를 진행한 뒤 FAISS를 사용하여 벡터 저장소를 생성하고 저장합니다.
 
+```python
+def createFAISS(self, documentList):
+    embeddings = OpenAIEmbeddings()
 
+    vectorstore = FAISS.from_documents(documentList, embeddings)
+    print("success to create VectorStore")
 
+    return vectorstore
 
+def saveFAISS(self, vectorstore, dbPath):
+    vectorstore.save_local(dbPath)
+```
 
+## TF-IDF 기반의 벡터 산출
+사용자로부터 논문 요약을 요청받았을 때, 전체 텍스트를 모두 사용하는 것은 비효율적일 수 있기 때문에 텍스트의 길이를 줄이는 추가적인 작업이 필요합니다.
+<br>먼저, 텍스트를 문장 단위로 나누고 TF-IDF 벡터를 생성합니다.
+```python
+sentences = sent_tokenize(mainText)
 
+vectorizer = TfidfVectorizer().fit_transform(sentences)
+vectors = vectorizer.toarray()
+```
+문장 간 유사도 행렬을 계산하고, 그 기반으로 그래프를 생성합니다.
+```python
+similarityMatrix = cosine_similarity(vectors)
 
-# 10. Result (수행 결과)
+nxGraph = nx.from_numpy_array(similarityMatrix)
+scores = nx.pagerank(nxGraph)
+```
+점수에 따라 문장을 정렬한 뒤, 사용할 문장의 수를 잘 설정하여 선택합니다.
+```python
+rankedSentences = sorted(((scores[i], s) for i, s in enumerate(sentences)), reverse=True)
+top_n = 100
+rankedText = " ".join([sentence for score, sentence in rankedSentences[:top_n]])
+```
+
+# 7. 모델
+LLama3.0, LLama3.1, OpenAI API 등 여러 모델을 사용해 보고, 입력 토큰 수와 추론 속도를 고려하여
+<br>최종적으로 OpenAI의 gpt-4o-mini 모델을 선택하고, LangChain을 활용했습니다.
+
+## Basic
+LLM과 프롬프트 템플릿을 연결하여 체인을 만들고, 사용자가 보낸 메시지(userSendMessage)를 받아 question 변수에 해당하는 값으로 프롬프트 템플릿에 적용하고, 이를 통해 LLM이 텍스트를 생성하는 작업을 실행합니다.
+```python
+llm = ChatOpenAI(temperature=0.3, model_name="gpt-4o-mini")
+prompt_template = PromptTemplate(
+    input_variables=["question"],
+    template=template
+)
+
+chain = LLMChain(llm=self.llm, prompt=prompt_template)
+return {"generatedText": chain.run(userSendMessage)}
+```
+
+## 질의 응답
+논문 관련 질의응답 시, LLM의 단점인'사실 관계 오류 가능성'과 '맥락 이해의 관계'를 개선하기 위해 RAG(Retrieval-Augmented Generation)를 사용했습니다.
+<br>LangChain을 사용하여 RAG 체인을 구성하고, 사용자의 입력을 처리한 후 그에 대한 답변을 생성합니다.
+<br>LangChain 허브에서 프롬프트를 불러온 뒤, RAG체인을 구성합니다. RAG는 외부 데이터를 검색하고, 이를 LLM을 통해 답변을 생성하는 방식으로 동작합니다.
+<br>vectorstore.as_retriever()를 통해 전처리 과정에서 생성된 FAISS 벡터 저장소에서 문서를 검색하고, 사용자의 입력과 유사한 문서를 결과로 반환합니다.
+```python
+def format_docs(docs):
+    return "\n\n".join([doc.page_content for doc in docs])
+
+userSendMessage = fileKey.split(".")[0] + " " + userSendMessage
+prompt = hub.pull("godk/korean-rag", api_key=langchain_api_key)
+
+rag_chain = (
+    {"context": vectorstore.as_retriever() | format_docs, "question": RunnablePassthrough()}
+    | prompt
+    | self.llm
+    | StrOutputParser()
+)
+return {"generatedText": rag_chain.invoke(userSendMessage)}
+```
+
+## 요약
+마찬가지로 LLM 체인을 생성하고 여러 문서를 하나의 텍스트로 채워넣는 StuffDocumentsChain을 정의합니다. 전처리 과정으로 줄여진 문서화된 텍스트가 실제 Input에 해당합니다.
+<br>StuffDocumentsChain을 통해 문서 내용을 프롬프트에 삽입한 후, LLM을 사용해 요약을 생성하고, 그 결과를 반환합니다.
+```python
+docs = [Document(page_content=rankedText, metadata={})]
+prompt_template = """실제로 프롬프트가 작성되어 있지만 생략하겠습니다.
+"""
+prompt = PromptTemplate.from_template(prompt_template)
+llm_chain = LLMChain(llm=self.llm, prompt=prompt)
+
+stuff_chain = StuffDocumentsChain(llm_chain=llm_chain, document_variable_name="context")
+output = stuff_chain.invoke({"input_documents": docs})
+return {"generatedText": output["output_text"]}
+```
+
+# 8. Result (수행 결과)
 Frontend / Backend / FastAPI / DLLS 구성에서 모든 동작이 안정적으로 잘 실행되는지 확인
 FastAPI - DLLS 구성에서 사용자 요청에 따른 LLM 동작이 잘 동작하는지 확인
 구성한 사용자 정의형 프로토콜이 잘 동작하는지 확인
@@ -329,10 +420,8 @@ FastAPI - DLLS 구성에서 사용자 요청에 따른 LLM 동작이 잘 동작�
 ![image](https://github.com/user-attachments/assets/ffe79024-74c2-42b2-bab7-d759514eb208)  
 
 
-
-
   
-# 11. 한 줄 회고
+# 9. 한 줄 회고
 🤓<b>한재혁</b>  
 _AWS와 Docker에 대해서 배우고 싶었는데, 단순히 배우는 것에서 그치지 않고 웹 애플리케이션 작성부터 배포까지 경험할 수 있어서 정말 좋은 경험이었습니다! 팀원분들도 같이 열심히 해주셔서 어렵지 않게 마무리 할 수 있었습니다. 다들 고생하셨습니다!!👏_  
 
